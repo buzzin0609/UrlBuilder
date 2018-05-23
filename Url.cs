@@ -25,6 +25,7 @@ namespace Url
         public Url(string baseUrl, object parameters = null)
         {
             _baseUrl = baseUrl;
+            
             if (parameters != null)
             {
                 _parameters = parameters;
@@ -48,11 +49,6 @@ namespace Url
         public void AddParam(string name, object value)
         {
             if (value == null) return;
-
-            if (value is int && (int) value == 0)
-            {
-                return;
-            }
 
             string _value = value.ToString();
 
